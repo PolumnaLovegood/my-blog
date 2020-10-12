@@ -1,0 +1,43 @@
+{% extends 'contacts/base.html' %}
+{% block content %}
+
+<table class="table">
+    </thead>
+  <tbody>
+    <tr>
+        <th scope="row">Имя</th>
+      <td>{{ contact.first_name }}</td>
+         </tr>
+    <tr>
+        <th scope="row">Фамилия</th>
+      <td>{{ contact.last_name }}</td>
+         </tr>
+    <tr>
+         <th scope="row">Отчество</th>
+      <td>{{ contact.patronymic }}</td>
+        </tr>
+    <tr>
+         <th scope="row">Дата рождения</th>
+        <td>{{ contact.birthday }}</td>
+        </tr>
+    <tr>
+         <th scope="row">Описание</th>
+         <td>{{ contact.description }}</td>
+        </tr>
+    <tr>
+         <th scope="row">Номер</th>
+         <td>{{ contact.number }}</td>
+        </tr>
+    <tr>
+        <th scope="row">E-mail</th>
+         <td>{{ contact.email }}</td>
+        </tr>
+    <tr>
+         <th scope="row">Соц.сети</th>
+         <td>{{ contact.social_networks }}</td>
+        </tr>
+    <a class="btn btn-default" href="{% url 'contact_edit' pk=contact.pk %}"><span class="glyphicon glyphicon-pencil"> Редактировать</span></a>
+  </tbody>
+</table>
+{% endblock %}
+

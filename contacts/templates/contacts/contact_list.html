@@ -1,0 +1,24 @@
+{% extends 'contacts/base.html' %}
+{% block content %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Фамилия</th>
+      <th>Номер</th>
+      <th>>>></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for contact in contacts %}
+    <tr>
+        <td>{{ contact.first_name }}</td>
+      <td>{{ contact.last_name }}</td>
+      <td>{{ contact.number }}</td>
+        <td> <a href="{% url 'contact_detail' pk=contact.pk %}"><button type="button" class="btn btn-light">Смотреть контакт</button></a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+

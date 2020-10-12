@@ -1,0 +1,17 @@
+<!-- templates/registration/login.html -->
+{% extends 'blog/base.html' %} &nbsp;
+
+    {% load crispy_forms_tags %}
+
+{% block content %}
+<h2 style=" position: relative;
+  margin: 20px 0 60px;
+  color: #3a923a;
+  font-size: 30px;
+  font-weight: normal;">Вход в аккаунт</h2>
+<form method="post" style="box-sizing: border-box;   max-width: 350px; padding: 0 30px 30px; margin: 0 auto 30px; background: white;">
+ {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Войти</button>
+  </form>
+{% endblock content %}
