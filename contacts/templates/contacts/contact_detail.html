@@ -36,7 +36,9 @@
          <th scope="row">Соц.сети</th>
          <td>{{ contact.social_networks }}</td>
         </tr>
+    {% if user.is_authenticated %}
     <a class="btn btn-default" href="{% url 'contact_edit' pk=contact.pk %}"><span class="glyphicon glyphicon-pencil"> Редактировать</span></a>
+    {% endif %}
   </tbody>
 </table>
 {% endblock %}
